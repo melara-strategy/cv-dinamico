@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "title": "David Melara | Executive Academic Portfolio",
+    "reference": "DE-ACA-EXEC-2026",
+    "exportLabel": "Exportar_CV_Academico_V1"
+  },
+  "identity": {
+    "name": "David Melara",
+    "fullName": "David Melara Bárcenas",
+    "phone": "+505 8819 0530",
+    "email": "davidmelara111@gmail.com",
+    "location": "Managua, Nicaragua",
+    "headline": "Executive Educator in Strategic Marketing, Negotiation and Market Intelligence"
+  },
+  "profile": {
+    "summary": "Executive educator and facilitator with experience translating market, negotiation and operational concepts into applied frameworks for decision-makers. Combines academic delivery with real commercial and operational background, enabling executive audiences to connect theory with implementation."
+  },
+  "metrics": [
+    {
+      "value": "+1.2k",
+      "label": "Executives Trained"
+    },
+    {
+      "value": "Posgrado",
+      "label": "Graduate-Level Teaching"
+    },
+    {
+      "value": "Applied",
+      "label": "Executive Learning Focus"
+    }
+  ],
+  "globalTraining": [
+    {
+      "country": "JAPÓN",
+      "institution": "JICA",
+      "program": "Tecnologías de Distribución"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "AECID",
+      "program": "Inteligencia de Negocios"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "REDBUS",
+      "program": "Estrategia Comercial"
+    }
+  ],
+  "education": [
+    {
+      "institution": "UCA Nicaragua",
+      "degree": "Maestría en Marketing"
+    },
+    {
+      "institution": "UCEM",
+      "degree": "Lic. Administración de Empresas"
+    }
+  ],
+  "page1Experience": [
+    {
+      "period": "2009 - 2011",
+      "company": "Escuela de Posgrado UAM / UNICA",
+      "role": "Senior Lecturer — Strategic Marketing and Negotiation",
+      "description": "Trained executive audiences in strategic negotiation, consumer psychology and market intelligence, translating complex concepts into applied decision frameworks."
+    },
+    {
+      "period": "2006 - 2009",
+      "company": "INPYME Institucional",
+      "role": "Head of Marketing and Innovation",
+      "description": "Designed competitiveness and market intelligence initiatives that strengthened the practical relevance of executive education and institutional development."
+    },
+    {
+      "period": "2011 - 2013",
+      "company": "Servicios de Seguridad Estratégica",
+      "role": "Head of Sales Operations / Strategic Manager",
+      "description": "Applied consultative selling, account prioritization and operational alignment frameworks that enriched executive teaching with real-world implementation cases."
+    }
+  ],
+  "page2Experience": [
+    {
+      "period": "2022 - 2025",
+      "company": "Innova Dental Laboratory",
+      "role": "Senior Key Account and Operational Integration Lead",
+      "description": "Recent operational and commercial experience that provides real-case substance for executive teaching in service coordination, client management and systems thinking."
+    }
+  ],
+  "legacy": {
+    "tag": "Applied Executive and Market Experience",
+    "jobs": [
+      {
+        "period": "1996 - 2004",
+        "company": "LAPRIN S.A. (PHARMA)",
+        "role": "Senior Medical Liaison",
+        "description": "Professional market experience in regulated healthcare environments, contributing rigor and field perspective to executive education."
+      },
+      {
+        "period": "1992 - 1996",
+        "company": "Laboratorios UNIPHARM S.A.",
+        "role": "Medical Territory Representative",
+        "description": "Commercial field experience that strengthens the applied and practical depth of executive learning delivery."
+      }
+    ]
+  },
+  "coreValues": [
+    "Rigor",
+    "Clarity",
+    "Transfer"
+  ],
+  "operationalSeal": [
+    "Executive Education",
+    "Applied Negotiation",
+    "Market Intelligence"
+  ],
+  "footer": {
+    "validatedExperience": "Validated Experience",
+    "portfolioLabel": "Academic Executive Portfolio 2026",
+    "specialty": "Executive Education and Applied Strategy"
+  }
+}

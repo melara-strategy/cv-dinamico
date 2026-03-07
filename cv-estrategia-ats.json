@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "title": "David Melara | Strategy and Operations CV - ATS",
+    "reference": "DE-ATS-STRAT-2026",
+    "exportLabel": "Exportar_CV_ATS_V1"
+  },
+  "identity": {
+    "name": "David Melara",
+    "fullName": "David Melara Bárcenas",
+    "phone": "+505 8819 0530",
+    "email": "davidmelara111@gmail.com",
+    "location": "Managua, Nicaragua",
+    "headline": "Operations Manager | Key Account Manager | Marketing Strategy"
+  },
+  "profile": {
+    "summary": "Senior professional with experience in operations, key account management, marketing strategy, business development and market intelligence. Skilled in cross-functional coordination, client relationship management, process improvement, commercial planning and revenue protection in service-intensive environments."
+  },
+  "metrics": [
+    {
+      "value": "+1.2k",
+      "label": "Executives Trained"
+    },
+    {
+      "value": "80%",
+      "label": "Critical Revenue Managed"
+    },
+    {
+      "value": "25%",
+      "label": "Rework Reduction"
+    }
+  ],
+  "globalTraining": [
+    {
+      "country": "JAPÓN",
+      "institution": "JICA",
+      "program": "Tecnologías de Distribución"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "AECID",
+      "program": "Inteligencia de Negocios"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "REDBUS",
+      "program": "Estrategia Comercial"
+    }
+  ],
+  "education": [
+    {
+      "institution": "UCA Nicaragua",
+      "degree": "Maestría en Marketing"
+    },
+    {
+      "institution": "UCEM",
+      "degree": "Lic. Administración de Empresas"
+    }
+  ],
+  "page1Experience": [
+    {
+      "period": "2022 - 2025",
+      "company": "Innova Dental Laboratory",
+      "role": "Senior Key Account Manager / Operations Coordinator",
+      "description": "Managed key client accounts and coordinated operations between customers, technical production and service delivery. Supported turnaround time control, issue resolution, rework reduction and revenue continuity."
+    },
+    {
+      "period": "2011 - 2013",
+      "company": "Servicios de Seguridad Estratégica",
+      "role": "Sales Operations Manager",
+      "bullets": [
+        "Implemented consultative sales practices and account segmentation processes.",
+        "Improved commercial coordination and alignment for high-value accounts."
+      ]
+    },
+    {
+      "period": "2006 - 2009",
+      "company": "INPYME Institucional",
+      "role": "Marketing and Innovation Manager",
+      "description": "Led marketing, competitiveness and market intelligence initiatives for organizations in growth stages. Supported strategic planning and institutional alignment."
+    }
+  ],
+  "page2Experience": [
+    {
+      "period": "2009 - 2011",
+      "company": "Escuela de Posgrado UAM / UNICA",
+      "role": "Senior Lecturer - Marketing and Negotiation",
+      "description": "Delivered executive training in strategic negotiation, consumer psychology and market intelligence."
+    }
+  ],
+  "legacy": {
+    "tag": "Commercial and Pharmaceutical Experience",
+    "jobs": [
+      {
+        "period": "1996 - 2004",
+        "company": "LAPRIN S.A. (PHARMA)",
+        "role": "Senior Medical Liaison",
+        "description": "Managed medical territories, professional relationships and technical communication in pharmaceutical markets."
+      },
+      {
+        "period": "1992 - 1996",
+        "company": "Laboratorios UNIPHARM S.A.",
+        "role": "Medical Territory Representative",
+        "description": "Supported market development, territory management and sustained commercial performance."
+      }
+    ]
+  },
+  "coreValues": [
+    "Execution",
+    "Coordination",
+    "Results"
+  ],
+  "operationalSeal": [
+    "Operations Management",
+    "Key Account Management",
+    "Business Development"
+  ],
+  "footer": {
+    "validatedExperience": "Validated Experience",
+    "portfolioLabel": "ATS CV 2026",
+    "specialty": "Operations and Commercial Management"
+  }
+}

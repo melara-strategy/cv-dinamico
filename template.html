@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Dinámico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --german-black: #000000;
+      --german-gray-light: #f9fafb;
+      --border-color: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 32px 0 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #111827;
+    }
+
+    .topbar {
+      width: 210mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .control-panel {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 12px 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .control-panel label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #4b5563;
+    }
+
+    .control-panel select,
+    .control-panel button {
+      height: 40px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .control-panel select {
+      min-width: 220px;
+    }
+
+    .action-btn {
+      background: #000 !important;
+      color: #fff;
+      border-color: #000 !important;
+      cursor: pointer;
+    }
+
+    .secondary-btn {
+      cursor: pointer;
+    }
+
+    .cv-page {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      position: relative;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+
+    .sidebar {
+      background-color: var(--german-gray-light);
+      border-right: 1.5px solid var(--german-black);
+      padding: 40px 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      padding: 40px 45px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-label {
+      font-size: 8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--german-black);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--german-black);
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+
+    .metric-box {
+      border: 1px solid var(--german-black);
+      padding: 15px;
+      text-align: center;
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .metric-value {
+      font-weight: 800;
+      font-size: 20pt;
+      line-height: 1;
+      color: var(--german-black);
+    }
+
+    .job-entry {
+      margin-bottom: 20px;
+      border-left: 3px solid var(--german-black);
+      padding-left: 15px;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 11pt;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .timeline-tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    .cluster-tag {
+      background: var(--german-black);
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 800;
+      padding: 4px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .small-muted {
+      font-size: 8.5pt;
+      color: #6b7280;
+    }
+
+    .loading-box,
+    .error-box {
+      width: 210mm;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      padding: 24px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .error-box {
+      color: #b91c1c;
+      border-color: #fecaca;
+      background: #fef2f2;
+    }
+
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .no-print,
+      .loading-box,
+      .error-box {
+        display: none !important;
+      }
+
+      .cv-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
+        border: none !important;
+        page-break-after: always;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar no-print">
+    <div class="control-panel">
+      <label for="cvSelector">Versión</label>
+      <select id="cvSelector">
+        <option value="cv-estrategia-executive.json">Executive / Estrategia</option>
+        <option value="cv-estrategia-ats.json">ATS / Estrategia</option>
+        <option value="cv-salud-executive.json">Executive / Salud</option>
+        <option value="cv-academico-executive.json">Executive / Académico</option>
+      </select>
+      <button id="openCvBtn" class="secondary-btn">Abrir</button>
+    </div>
+
+    <div class="control-panel">
+      <button id="printBtn" class="action-btn">Exportar PDF</button>
+    </div>
+  </div>
+
+  <div id="loading" class="loading-box">Cargando CV dinámico...</div>
+  <div id="error" class="error-box" style="display:none;"></div>
+
+  <div class="cv-page" id="page-1" style="display:none;">
+    <aside class="sidebar">
+      <div class="mb-10">
+        <span class="section-label">Datos_Identidad</span>
+        <div class="space-y-3 text-[9pt] font-medium text-zinc-700">
+          <p id="phone" class="text-black font-bold"></p>
+          <p id="email" class="leading-tight break-all"></p>
+          <p id="location" class="uppercase tracking-widest text-[8pt]"></p>
+          <p id="reference" class="text-[7pt] text-zinc-400 mt-4"></p>
+        </div>
+      </div>
+
+      <div class="mb-10">
+        <span class="section-label">Formación_Global</span>
+        <div id="globalTraining" class="space-y-4 text-[8.5pt]"></div>
+      </div>
+
+      <div class="mt-auto">
+        <span class="section-label">Educación</span>
+        <div id="education" class="text-[8.5pt] space-y-4"></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="mb-8">
+        <h1 id="name" class="text-[34pt] font-extrabold text-black uppercase leading-none mb-2 tracking-tighter"></h1>
+        <p id="headline" class="text-[9.5pt] font-bold tracking-[0.2em] text-zinc-500 uppercase border-t-2 border-zinc-100 pt-2"></p>
+      </header>
+
+      <section class="mb-8">
+        <span class="section-label">Perfil_Profesional</span>
+        <p id="profileSummary" class="text-[9.5pt] leading-[1.65] text-zinc-800 font-medium text-justify mt-2"></p>
+      </section>
+
+      <section class="mb-8">
+        <span class="section-label">Métricas_Cuantificadas</span>
+        <div id="metrics" class="grid grid-cols-3 gap-0 mt-4"></div>
+      </section>
+
+      <section>
+        <span class="section-label">Trayectoria_Operativa_(I)</span>
+        <div id="page1Experience" class="space-y-6 mt-4"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="cv-page" id="page-2" style="display:none;">
+    <aside class="sidebar">
+      <div class="mb-10">
+        <span class="section-label">Valores_Core</span>
+        <div id="coreValues" class="space-y-4 pt-4"></div>
+      </div>
+
+      <div class="mt-auto">
+        <div class="border-t border-zinc-200 pt-6">
+          <p class="text-[7pt] text-zinc-400 font-bold uppercase tracking-widest italic mb-2">Sello Operativo</p>
+          <div id="operationalSeal" class="space-y-1"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="mb-10">
+        <span class="section-label">Trayectoria_Operativa_(II)</span>
+        <div id="page2Experience" class="space-y-6 mt-4"></div>
+      </section>
+
+      <section>
+        <span class="section-label">Arquitectura_de_Legado</span>
+        <div class="mt-4">
+          <div id="legacyTag" class="cluster-tag"></div>
+          <div id="legacyJobs"></div>
+        </div>
+      </section>
+
+      <footer class="mt-auto pt-8 border-t border-zinc-200 flex justify-between items-end">
+        <div class="text-left">
+          <p id="validatedExperience" class="text-[7pt] text-zinc-400 font-bold uppercase tracking-[0.2em]"></p>
+          <p id="portfolioLabel" class="text-[9pt] font-extrabold text-black uppercase"></p>
+        </div>
+        <div class="text-right">
+          <p id="fullName" class="text-[10pt] font-black text-black uppercase tracking-tight"></p>
+          <p id="specialty" class="text-[7pt] text-zinc-400 font-bold uppercase"></p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const CV_OPTIONS = [
+      "cv-estrategia-executive.json",
+      "cv-estrategia-ats.json",
+      "cv-salud-executive.json",
+      "cv-academico-executive.json"
+    ];
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function getJsonFileFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('data') || 'cv-estrategia-executive.json';
+      return CV_OPTIONS.includes(file) ? file : 'cv-estrategia-executive.json';
+    }
+
+    function syncSelector(file) {
+      const selector = document.getElementById('cvSelector');
+      selector.value = file;
+    }
+
+    function changeCvFromSelector() {
+      const selector = document.getElementById('cvSelector');
+      const selectedFile = selector.value;
+      const newUrl = `${window.location.pathname}?data=${encodeURIComponent(selectedFile)}`;
+      window.location.href = newUrl;
+    }
+
+    function setupActions() {
+      document.getElementById('openCvBtn').addEventListener('click', changeCvFromSelector);
+      document.getElementById('cvSelector').addEventListener('change', changeCvFromSelector);
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+    }
+
+    async function loadCV() {
+      const loading = document.getElementById('loading');
+      const errorBox = document.getElementById('error');
+      const page1 = document.getElementById('page-1');
+      const page2 = document.getElementById('page-2');
+
+      try {
+        const file = getJsonFileFromUrl();
+        syncSelector(file);
+
+        const response = await fetch(`./${file}`);
+        if (!response.ok) {
+          throw new Error(`No se pudo abrir el archivo JSON: ${file}`);
+        }
+
+        const data = await response.json();
+
+        document.title = data?.metadata?.title || 'CV Dinámico';
+        document.getElementById('phone').textContent = data?.identity?.phone || '';
+        document.getElementById('email').textContent = data?.identity?.email || '';
+        document.getElementById('location').textContent = data?.identity?.location || '';
+        document.getElementById('reference').textContent = data?.metadata?.reference ? `Ref_Aut: ${data.metadata.reference}` : '';
+        document.getElementById('name').textContent = data?.identity?.name || '';
+        document.getElementById('headline').textContent = data?.identity?.headline || '';
+        document.getElementById('profileSummary').textContent = data?.profile?.summary || '';
+        document.getElementById('legacyTag').textContent = data?.legacy?.tag || '';
+        document.getElementById('validatedExperience').textContent = data?.footer?.validatedExperience || '';
+        document.getElementById('portfolioLabel').textContent = data?.footer?.portfolioLabel || '';
+        document.getElementById('fullName').textContent = data?.identity?.fullName || '';
+        document.getElementById('specialty').textContent = data?.footer?.specialty || '';
+
+        renderGlobalTraining(data?.globalTraining || []);
+        renderEducation(data?.education || []);
+        renderMetrics(data?.metrics || []);
+        renderExperience('page1Experience', data?.page1Experience || []);
+        renderExperience('page2Experience', data?.page2Experience || []);
+        renderCoreValues(data?.coreValues || []);
+        renderOperationalSeal(data?.operationalSeal || []);
+        renderLegacyJobs(data?.legacy?.jobs || []);
+
+        loading.style.display = 'none';
+        errorBox.style.display = 'none';
+        page1.style.display = 'grid';
+        page2.style.display = 'grid';
+      } catch (error) {
+        console.error(error);
+        loading.style.display = 'none';
+        errorBox.style.display = 'block';
+        errorBox.innerHTML = `
+          <div>No se pudo cargar el CV.</div>
+          <div class="small-muted" style="margin-top:8px;">
+            Revisa que el archivo JSON exista en la misma carpeta que <strong>template.html</strong>.
+          </div>
+          <div class="small-muted" style="margin-top:8px;">
+            Detalle: ${escapeHtml(error.message)}
+          </div>
+        `;
+      }
+    }
+
+    function renderGlobalTraining(items) {
+      const container = document.getElementById('globalTraining');
+      container.innerHTML = items.map(item => `
+        <div class="border-l-2 border-zinc-300 pl-3">
+          <p class="font-bold text-black uppercase">${escapeHtml(item.country)} (${escapeHtml(item.institution)})</p>
+          <p class="text-zinc-500">${escapeHtml(item.program)}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderEducation(items) {
+      const container = document.getElementById('education');
+      container.innerHTML = items.map(item => `
+        <div>
+          <p class="font-bold text-black uppercase leading-tight">${escapeHtml(item.institution)}</p>
+          <p class="text-zinc-500 italic">${escapeHtml(item.degree)}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderMetrics(items) {
+      const container = document.getElementById('metrics');
+      container.innerHTML = items.map((item, index) => `
+        <div class="metric-box ${index < items.length - 1 ? 'border-r-0' : ''} ${index === 1 ? 'bg-zinc-50' : ''}">
+          <p class="metric-value">${escapeHtml(item.value)}</p>
+          <p class="text-[7pt] font-extrabold text-zinc-500 uppercase mt-1">${escapeHtml(item.label)}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderExperience(containerId, items) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = items.map(item => {
+        const bulletsHtml = Array.isArray(item.bullets) && item.bullets.length
+          ? `
+            <ul class="text-[9pt] text-zinc-700 space-y-1 list-disc pl-4 mt-1">
+              ${item.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}
+            </ul>
+          `
+          : `<p class="text-[9pt] text-zinc-700 leading-snug">${escapeHtml(item.description || '')}</p>`;
+
+        return `
+          <div class="job-entry">
+            <span class="timeline-tag">${escapeHtml(item.period || '')}</span>
+            <h3 class="job-title">${escapeHtml(item.company || '')}</h3>
+            <p class="text-[8.5pt] font-bold text-zinc-500 uppercase mb-2">${escapeHtml(item.role || '')}</p>
+            ${bulletsHtml}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderCoreValues(items) {
+      const container = document.getElementById('coreValues');
+      container.innerHTML = items.map((item, index) => `
+        <p class="text-[8pt] font-extrabold uppercase tracking-widest ${index === 1 ? 'text-zinc-400' : ''}">${escapeHtml(item)}</p>
+      `).join('');
+    }
+
+    function renderOperationalSeal(items) {
+      const container = document.getElementById('operationalSeal');
+      container.innerHTML = items.map((item, index) => `
+        <p class="text-[8pt] font-bold ${index === 0 ? 'text-black' : 'text-zinc-500'}">${escapeHtml(item)}</p>
+      `).join('');
+    }
+
+    function renderLegacyJobs(items) {
+      const container = document.getElementById('legacyJobs');
+      container.innerHTML = items.map(item => `
+        <div class="job-entry">
+          <span class="timeline-tag">${escapeHtml(item.period || '')}</span>
+          <h3 class="job-title">${escapeHtml(item.company || '')}</h3>
+          <p class="text-[8.5pt] font-bold text-zinc-500 uppercase mb-2">${escapeHtml(item.role || '')}</p>
+          <p class="text-[9pt] text-zinc-700 leading-snug">${escapeHtml(item.description || '')}</p>
+        </div>
+      `).join('');
+    }
+
+    setupActions();
+    loadCV();
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "title": "David Melara | Executive Portfolio - Healthcare Commercial Operations",
+    "reference": "DE-HEALTH-EXEC-2026",
+    "exportLabel": "Exportar_CV_Salud_V1"
+  },
+  "identity": {
+    "name": "David Melara",
+    "fullName": "David Melara Bárcenas",
+    "phone": "+505 8819 0530",
+    "email": "davidmelara111@gmail.com",
+    "location": "Managua, Nicaragua",
+    "headline": "Healthcare Commercial and Clinical Operations Integration Lead"
+  },
+  "profile": {
+    "summary": "Executive with experience at the intersection of healthcare commercial strategy, professional account management and operational coordination. Specialized in integrating client-facing, technical and service functions to sustain continuity, protect critical revenue and reduce execution friction in clinically driven environments."
+  },
+  "metrics": [
+    {
+      "value": "80%",
+      "label": "Critical Revenue Protected"
+    },
+    {
+      "value": "25%",
+      "label": "Operational Rework Reduction"
+    },
+    {
+      "value": "12+",
+      "label": "Years in Health Markets"
+    }
+  ],
+  "globalTraining": [
+    {
+      "country": "JAPÓN",
+      "institution": "JICA",
+      "program": "Tecnologías de Distribución"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "AECID",
+      "program": "Inteligencia de Negocios"
+    },
+    {
+      "country": "ESPAÑA",
+      "institution": "REDBUS",
+      "program": "Estrategia Comercial"
+    }
+  ],
+  "education": [
+    {
+      "institution": "UCA Nicaragua",
+      "degree": "Maestría en Marketing"
+    },
+    {
+      "institution": "UCEM",
+      "degree": "Lic. Administración de Empresas"
+    }
+  ],
+  "page1Experience": [
+    {
+      "period": "2022 - 2025",
+      "company": "Innova Dental Laboratory",
+      "role": "Senior Key Account and Clinical Operations Integration Lead",
+      "description": "Managed critical dental accounts and resolved friction between doctors, technical production and service continuity. Protected high-value relationships and intervened on operational bottlenecks affecting delivery reliability, rework and revenue stability."
+    },
+    {
+      "period": "1996 - 2004",
+      "company": "LAPRIN S.A. (PHARMA)",
+      "role": "Senior Medical Liaison",
+      "description": "Built and sustained professional healthcare relationships through technical communication, territory consolidation and disciplined commercial execution in pharmaceutical markets."
+    },
+    {
+      "period": "1992 - 1996",
+      "company": "Laboratorios UNIPHARM S.A.",
+      "role": "Medical Territory Representative",
+      "description": "Developed market presence and professional engagement in ethically regulated medical product lines, sustaining territory performance through technical precision and field consistency."
+    }
+  ],
+  "page2Experience": [
+    {
+      "period": "2006 - 2009",
+      "company": "INPYME Institucional",
+      "role": "Head of Marketing and Innovation",
+      "description": "Led competitiveness and market intelligence initiatives with transferable strategic value for health-related commercial environments."
+    }
+  ],
+  "legacy": {
+    "tag": "Healthcare, Pharma and Professional Markets",
+    "jobs": [
+      {
+        "period": "2009 - 2011",
+        "company": "Escuela de Posgrado UAM / UNICA",
+        "role": "Senior Lecturer — Strategic Marketing and Negotiation",
+        "description": "Delivered executive education in negotiation, consumer psychology and market intelligence, enriching applied judgment in professional service environments."
+      },
+      {
+        "period": "2011 - 2013",
+        "company": "Servicios de Seguridad Estratégica",
+        "role": "Head of Sales Operations / Strategic Manager",
+        "description": "Reoriented commercial processes toward consultative selling and strategic account prioritization."
+      }
+    ]
+  },
+  "coreValues": [
+    "Reliability",
+    "Precision",
+    "Continuity"
+  ],
+  "operationalSeal": [
+    "Healthcare Account Integration",
+    "Clinical Operations Coordination",
+    "Revenue Continuity Protection"
+  ],
+  "footer": {
+    "validatedExperience": "Validated Experience",
+    "portfolioLabel": "Healthcare Executive Portfolio 2026",
+    "specialty": "Healthcare Commercial Operations"
+  }
+}
